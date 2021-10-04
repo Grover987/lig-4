@@ -4,20 +4,22 @@ body{
 }
 
 #gameBox{
+  height: 1000px;
+  width: 1000px;
   margin: 0 auto;
    align-items: center;
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: row;
     border: none;
 }
 
 section{
   
     background-color: aqua;
-    height: 100px;
+    height: 60%;
     width: auto;
   display: flex;
-  flex-direction: row;
+  flex-direction: column-reverse;
 }
 
 div{
