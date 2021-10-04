@@ -1,0 +1,20 @@
+body{
+   align-items: center;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+section{
+  
+    background-color: aqua;
+    height: 100px;
+    width: auto;
+  display: flex;
+  flex-direction: row;
+}
+
+div{
+    border: solid rebeccapurple 1px;
+    height: 100%;
+    width: 100px;
+}
