@@ -1,7 +1,14 @@
+
 body{
+  display: flex;
+}
+
+#gameBox{
+  margin: 0 auto;
    align-items: center;
     display: flex;
     flex-direction: column-reverse;
+    border: none;
 }
 
 section{
