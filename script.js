@@ -14,7 +14,7 @@ for(let i = 1; i <= 7; i++){
     for(let j = 0; j < 6; j++){
       
        let div = document.createElement('div');
-       div.id = num;
+       div.setAttribute('data-square',num);
        num++
         tableSection.appendChild(div);
        
