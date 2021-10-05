@@ -4,7 +4,11 @@ let trackPlayerOne = []
 let trackPlayerTwo = []
 let num = 1
 
-for (let i = 1; i <= 7; i++) {
+function play(){
+
+}
+function createTable(){
+ for (let i = 1; i <= 7; i++) {
   let tableSection = document.createElement('section')
   tableSection.classList.add(i)
   gameBox.appendChild(tableSection)
@@ -17,8 +21,9 @@ for (let i = 1; i <= 7; i++) {
     tableSection.appendChild(div)
   }
 }
-const columns = document.querySelectorAll('section')
+}
 
+const columns = document.querySelectorAll('section')
 let playerOne = document.createElement('div')
 playerOne.classList.add('playerOne')
 let playerTwo = document.createElement('div')

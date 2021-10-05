@@ -1,13 +1,13 @@
 
-body{
-  display: flex;
-}
 
+h1{
+	text-align: center;
+	font-size: 60px
+}
 #gameBox{
-  height: 1000px;
-  width: 1000px;
-  margin: 0 auto;
-   align-items: center;
+	
+	margin: 0 auto;
+    align-items: center;
     display: flex;
     flex-direction: row;
     border: none;
@@ -18,8 +18,8 @@ section{
     background-color: aqua;
     height: 60%;
     width: auto;
-  display: flex;
-  flex-direction: column-reverse;
+ 	display: flex;
+    flex-direction: column-reverse;
 }
 
 div{
@@ -32,10 +32,59 @@ div{
   height: 98px;
   border-radius: 100%;
   background-color: red;
+  
+}
+#buttonCat{
+	width: 120px;
+	height: 35px;
+	margin-top: 10px;
+}
+#buttonDoggo{
+	width: 120px;
+	height: 35px;
+	margin-top: 10px;
 }
 .playerTwo{
   width: 98px;
   height: 98px;
   border-radius: 100%;
   background-color: black;
+}
+.menu{
+	display: flex;
+	flex-direction: row;
+	width: 300px;
+	height: 200px;
+	margin: 40px auto 0 auto;
+	border: none;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+.cat{
+	border: none;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+}
+.dog{
+	display: flex;
+	flex-direction: column;
+	border: none;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+}
+#imgCat{
+	width: 100px;
+	height: 100px;
+	border-radius: 100%;
+}
+
+#imgDog{
+	border-radius: 100%;
+	width: 100px;
+	width: 100px;
 }
