@@ -4,6 +4,7 @@ let trackPlayerOne= []
 let trackPlayerTwo= []
 let num = 1;
 
+
 for(let i = 1; i <= 7; i++){
    
     let tableSection = document.createElement('section');
@@ -29,6 +30,8 @@ playerTwo.classList.add('playerTwo');
 
 let players = []
 let count = 0;
+let playerOneArr = [];
+let playerTwoArr = [];
 
 for(let i = 0 ; i <6;i++){
     trackPlayerOne[i] = new Array(7)
@@ -59,14 +62,30 @@ function addDiscs(evt){
                    count=1;
                    trackPlayerOne[-indexX+5][indexY-1] = players[0]
                   console.log(trackPlayerOne)
-                   return  columnChild[i].appendChild(players[0]);
+                  columnChild[i].appendChild(players[0]);
+                 
+                  let playerOnePlay = players[0].parentElement.dataset;
+                  for(let value in playerOnePlay){
+                      let arrValue = playerOnePlay[value];
+                      playerOneArr.push(arrValue)
+                      console.log(playerOneArr)
+                  }
+                   return  
                     
 
                 }else{
                    count = 0;
                    trackPlayerTwo[-indexX+5][indexY-1] = players[1]
                    console.log(trackPlayerTwo)
-                   return  columnChild[i].appendChild(players[1]);
+                   columnChild[i].appendChild(players[1]);
+
+                   let playerTwoPlay = players[1].parentElement.dataset;
+                   for( let value in playerTwoPlay){
+                       let arrValue = playerTwoPlay[value];
+                       playerTwoArr.push(arrValue);
+                       console.log(playerTwoArr)
+                   }
+                   return 
                     
                 }
             }
