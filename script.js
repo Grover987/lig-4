@@ -92,3 +92,25 @@ createParameters()
 winningV.pop()
 let winS = winningV.join(' ')
 let winArrVert = winS.split(' - ')
+
+//VICTORY PARAMETERS Horizontal
+
+const winHorizon = [1, 7, 13, 19]
+const winningH = []
+
+for (let k = 0; k < 4; k++) {
+  for (let i = 0; i < 6; i++) {
+    winHorizon.forEach(function winConHorizontal(valor) {
+      winningH.push(valor + i)
+    })
+    winningH.push('-')
+  }
+
+  for (let i = 0; i < winHorizon.length; i++) {
+    winHorizon[i] += 6
+  }
+}
+
+winningV.pop()
+let winSH = winningH.join(' ')
+let winArrHoriz = winSH.split(' - ')
