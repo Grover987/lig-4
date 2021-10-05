@@ -2,7 +2,7 @@ const body = document.getElementsByTagName('body')[0];
 const gameBox = document.getElementById('gameBox')
 let trackPlayerOne= []
 let trackPlayerTwo= []
-
+let num = 1;
 
 for(let i = 1; i <= 7; i++){
    
@@ -14,7 +14,8 @@ for(let i = 1; i <= 7; i++){
     for(let j = 0; j < 6; j++){
       
        let div = document.createElement('div');
-       div.id = j;
+       div.id = num;
+       num++
         tableSection.appendChild(div);
        
     }
