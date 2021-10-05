@@ -1,14 +1,8 @@
 const body = document.getElementsByTagName('body')[0]
 const gameBox = document.getElementById('gameBox')
-let trackPlayerOne = []
-let trackPlayerTwo = []
 let num = 1
 
-function play(){
-
-}
-function createTable(){
- for (let i = 1; i <= 7; i++) {
+for (let i = 1; i <= 7; i++) {
   let tableSection = document.createElement('section')
   tableSection.classList.add(i)
   gameBox.appendChild(tableSection)
@@ -21,9 +15,8 @@ function createTable(){
     tableSection.appendChild(div)
   }
 }
-}
-
 const columns = document.querySelectorAll('section')
+
 let playerOne = document.createElement('div')
 playerOne.classList.add('playerOne')
 let playerTwo = document.createElement('div')
@@ -31,11 +24,10 @@ playerTwo.classList.add('playerTwo')
 
 let players = []
 let count = 0
+let playerOneArr = []
+let playerTwoArr = []
 
-for (let i = 0; i < 6; i++) {
-  trackPlayerOne[i] = new Array(7)
-  trackPlayerTwo[i] = new Array(7)
-}
+
 
 function addDiscs(evt) {
   columns.forEach(section =>
@@ -51,19 +43,33 @@ function addDiscs(evt) {
           players[0] = playerOne
           players[1] = playerTwo
 
-          let indexX = Number(columnChild[i].id)
-          let indexY = Number(section.getAttribute('class'))
+         
 
           if (count === 0) {
             count = 1
-            trackPlayerOne[-indexX + 5][indexY - 1] = players[0]
-            console.log(trackPlayerOne)
-            return columnChild[i].appendChild(players[0])
+            
+           
+            columnChild[i].appendChild(players[0])
+
+            let playerOnePlay = players[0].parentElement.dataset
+            for (let value in playerOnePlay) {
+              let arrValue = playerOnePlay[value]
+              playerOneArr.push(arrValue)
+              console.log(playerOneArr)
+            }
+            return
           } else {
             count = 0
-            trackPlayerTwo[-indexX + 5][indexY - 1] = players[1]
-            console.log(trackPlayerTwo)
-            return columnChild[i].appendChild(players[1])
+           
+            columnChild[i].appendChild(players[1])
+
+            let playerTwoPlay = players[1].parentElement.dataset
+            for (let value in playerTwoPlay) {
+              let arrValue = playerTwoPlay[value]
+              playerTwoArr.push(arrValue)
+              console.log(playerTwoArr)
+            }
+            return
           }
         }
       }
@@ -71,8 +77,6 @@ function addDiscs(evt) {
   )
 }
 addDiscs()
-
-function victoryDiagonal() {}
 
 //VICTORY PARAMETERS Vertical
 const winVert = [1, 2, 3, 4]
@@ -97,3 +101,25 @@ createParameters()
 winningV.pop()
 let winS = winningV.join(' ')
 let winArrVert = winS.split(' - ')
+
+//VICTORY PARAMETERS Horizontal
+
+const winHorizon = [1, 7, 13, 19]
+const winningH = []
+
+for (let k = 0; k < 4; k++) {
+  for (let i = 0; i < 6; i++) {
+    winHorizon.forEach(function winConHorizontal(valor) {
+      winningH.push(valor + i)
+    })
+    winningH.push('-')
+  }
+
+  for (let i = 0; i < winHorizon.length; i++) {
+    winHorizon[i] += 6
+  }
+}
+
+winningH.pop()
+let winSH = winningH.join(' ')
+let winArrHoriz = winSH.split(' - ')
