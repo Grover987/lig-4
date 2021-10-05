@@ -1,0 +1,41 @@
+
+body{
+  display: flex;
+}
+
+#gameBox{
+  height: 1000px;
+  width: 1000px;
+  margin: 0 auto;
+   align-items: center;
+    display: flex;
+    flex-direction: row;
+    border: none;
+}
+
+section{
+  
+    background-color: aqua;
+    height: 60%;
+    width: auto;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+div{
+    border: solid rebeccapurple 1px;
+    height: 100%;
+    width: 100px;
+}
+.playerOne{
+  width: 98px;
+  height: 98px;
+  border-radius: 100%;
+  background-color: red;
+}
+.playerTwo{
+  width: 98px;
+  height: 98px;
+  border-radius: 100%;
+  background-color: black;
+}
