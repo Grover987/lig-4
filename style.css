@@ -27,3 +27,15 @@ div{
     height: 100%;
     width: 100px;
 }
+.playerOne{
+  width: 98px;
+  height: 98px;
+  border-radius: 100%;
+  background-color: red;
+}
+.playerTwo{
+  width: 98px;
+  height: 98px;
+  border-radius: 100%;
+  background-color: black;
+}
