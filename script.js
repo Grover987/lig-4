@@ -111,6 +111,6 @@ for (let k = 0; k < 4; k++) {
   }
 }
 
-winningV.pop()
+winningH.pop()
 let winSH = winningH.join(' ')
 let winArrHoriz = winSH.split(' - ')
