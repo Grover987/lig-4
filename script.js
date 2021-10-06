@@ -159,3 +159,4 @@ function checkDraw() {
     //Chamar a função ao final de cada jogada
   }
 }
+
