@@ -1,21 +1,21 @@
-const body = document.getElementsByTagName('body')[0];
-const gameBox = document.createElement('div');
-gameBox.setAttribute('id','gameBox');
+const body = document.getElementsByTagName('body')[0]
+const gameBox = document.createElement('div')
+gameBox.setAttribute('id', 'gameBox')
 
-const menu = document.querySelector('.menu');
-let menuTrack = menu;
+const menu = document.querySelector('.menu')
+let menuTrack = menu
 
-const cat = document.getElementById('imgCat');
-const dog = document.getElementById('imgDog');
+const cat = document.getElementById('imgCat')
+const dog = document.getElementById('imgDog')
 
 let num = 1
 let players = []
 let count = 0
 let playerOneArr = []
 let playerTwoArr = []
-let actualPlayer;
+let actualPlayer
 
-function createTable(playerTarget){
+function createTable(playerTarget) {
   menu.remove()
   actualPlayer = playerTarget
 
@@ -23,7 +23,6 @@ function createTable(playerTarget){
     let tableSection = document.createElement('section')
     tableSection.classList.add(i)
     gameBox.appendChild(tableSection)
-  
 
     for (let j = 0; j < 6; j++) {
       let div = document.createElement('div')
@@ -34,53 +33,46 @@ function createTable(playerTarget){
     }
   }
   body.appendChild(gameBox)
-  const columns = document.querySelectorAll('section');
-  addDiscs(columns,actualPlayer);
+  const columns = document.querySelectorAll('section')
+  addDiscs(columns, actualPlayer)
 }
 
-
-
 let playerOne = document.createElement('img')
-playerOne.setAttribute('id','imgCat')
+playerOne.setAttribute('id', 'imgCat')
 let playerTwo = document.createElement('img')
-playerTwo.setAttribute('id','imgCat')
+playerTwo.setAttribute('id', 'imgCat')
 
-
-
-cat.addEventListener('click',function (evt){
+cat.addEventListener('click', function (evt) {
   createTable(evt.target)
 })
-dog.addEventListener('click',function (evt){
+dog.addEventListener('click', function (evt) {
   createTable(evt.target)
 })
 
-function addDiscs(columns,actualPlayer) {
+function addDiscs(columns, actualPlayer) {
   columns.forEach(section =>
     section.addEventListener('click', function (evt) {
       let columnChild = evt.currentTarget.childNodes
       for (let i = 0; i < 6; i++) {
         if (columnChild[i].childElementCount < 1) {
           playerOne = document.createElement('img')
-          playerOne.setAttribute('class','catCells')
-          playerOne.setAttribute('src','img/doge2.png')
+          playerOne.setAttribute('class', 'catCells')
+          playerOne.setAttribute('src', 'img/doge2.png')
           playerTwo = document.createElement('img')
-          playerTwo.setAttribute('src','img/doge.png')
-          playerTwo.setAttribute('class','dogCells')
+          playerTwo.setAttribute('src', 'img/doge.png')
+          playerTwo.setAttribute('class', 'dogCells')
 
-   
-          if(actualPlayer.getAttribute('id')==='imgCat'){
+          if (actualPlayer.getAttribute('id') === 'imgCat') {
             players[0] = playerOne
             players[1] = playerTwo
-          }else{
+          } else {
             players[0] = playerTwo
             players[1] = playerOne
           }
-          
 
           if (count === 0) {
             count = 1
-            
-           
+
             columnChild[i].appendChild(players[0])
 
             let playerOnePlay = players[0].parentElement.dataset
@@ -92,7 +84,7 @@ function addDiscs(columns,actualPlayer) {
             return
           } else {
             count = 0
-           
+
             columnChild[i].appendChild(players[1])
 
             let playerTwoPlay = players[1].parentElement.dataset
@@ -117,7 +109,6 @@ function winConVertical(valor) {
   for (i = 0; i <= 3; i++) {
     winningV.push(valor + i)
   }
-  winningV.push('-')
 }
 
 function createParameters() {
@@ -129,9 +120,12 @@ function createParameters() {
   }
 }
 createParameters()
-winningV.pop()
-let winS = winningV.join(' ')
-let winArrVert = winS.split(' - ')
+
+const winArrV = []
+
+for (i = 0; i < 24; i++) {
+  winArrV[i] = winningV.splice(0, 4)
+}
 
 //VICTORY PARAMETERS Horizontal
 
@@ -140,10 +134,9 @@ const winningH = []
 
 for (let k = 0; k < 4; k++) {
   for (let i = 0; i < 6; i++) {
-    winHorizon.forEach(function winConHorizontal(valor) {
+    winHorizon.forEach(function (valor) {
       winningH.push(valor + i)
     })
-    winningH.push('-')
   }
 
   for (let i = 0; i < winHorizon.length; i++) {
@@ -151,7 +144,8 @@ for (let k = 0; k < 4; k++) {
   }
 }
 
-winningH.pop()
-let winSH = winningH.join(' ')
-let winArrHoriz = winSH.split(' - ')
-console.log(winArrHoriz)
+const winArrH = []
+
+for (i = 0; i < 24; i++) {
+  winArrH[i] = winningH.splice(0, 4)
+}
