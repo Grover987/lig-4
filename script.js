@@ -86,7 +86,7 @@ function addDiscs(columns,actualPlayer) {
             let playerOnePlay = players[0].parentElement.dataset
             for (let value in playerOnePlay) {
               let arrValue = playerOnePlay[value]
-              playerOneArr.push(arrValue)
+              playerOneArr.push(+arrValue)
               console.log(playerOneArr)
             }
             return
@@ -98,7 +98,7 @@ function addDiscs(columns,actualPlayer) {
             let playerTwoPlay = players[1].parentElement.dataset
             for (let value in playerTwoPlay) {
               let arrValue = playerTwoPlay[value]
-              playerTwoArr.push(arrValue)
+              playerTwoArr.push(+arrValue)
               console.log(playerTwoArr)
             }
             return
@@ -154,3 +154,4 @@ for (let k = 0; k < 4; k++) {
 winningH.pop()
 let winSH = winningH.join(' ')
 let winArrHoriz = winSH.split(' - ')
+console.log(winArrHoriz)
