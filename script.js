@@ -154,4 +154,5 @@ for (let k = 0; k < 4; k++) {
 winningH.pop()
 let winSH = winningH.join(' ')
 let winArrHoriz = winSH.split(' - ')
+
 console.log(winArrHoriz)
