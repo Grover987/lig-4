@@ -74,25 +74,29 @@ function addDiscs(columns, actualPlayer) {
             count = 1
 
             columnChild[i].appendChild(players[0])
-
+          
             let playerOnePlay = players[0].parentElement.dataset
             for (let value in playerOnePlay) {
               let arrValue = playerOnePlay[value]
               playerOneArr.push(+arrValue)
               console.log(playerOneArr)
             }
+            verifyWinner(players[0])
+            checkDraw();
             return
           } else {
             count = 0
 
             columnChild[i].appendChild(players[1])
-
+           
             let playerTwoPlay = players[1].parentElement.dataset
             for (let value in playerTwoPlay) {
               let arrValue = playerTwoPlay[value]
               playerTwoArr.push(+arrValue)
               console.log(playerTwoArr)
             }
+            verifyWinner(players[1])
+            checkDraw();
             return
           }
         }
