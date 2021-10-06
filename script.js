@@ -119,7 +119,7 @@ for (let k = 0; k < 7; k++) {
 
 const winArrV = []
 
-for (let i = 0; i < 22; i++) {
+for (let i = 0; i < 21; i++) {
   winArrV[i] = winningV.splice(0, 4)
 }
 
