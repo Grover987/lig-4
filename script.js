@@ -105,25 +105,21 @@ function addDiscs(columns, actualPlayer) {
 const winVert = [1, 2, 3, 4]
 const winningV = []
 
-function winConVertical(valor) {
-  for (i = 0; i <= 3; i++) {
-    winningV.push(valor + i)
+for (let k = 0; k < 7; k++) {
+  for (let i = 0; i < 3; i++) {
+    winVert.forEach(function (value) {
+      winningV.push(value + i)
+    })
   }
-}
 
-function createParameters() {
-  for (let i = 0; i < 6; i++) {
-    winVert.forEach(winConVertical)
-    for (let j = 0; j < winVert.length; j++) {
-      winVert[j] += 7
-    }
+  for (let i = 0; i < winVert.length; i++) {
+    winVert[i] += 6
   }
 }
-createParameters()
 
 const winArrV = []
 
-for (i = 0; i < 24; i++) {
+for (let i = 0; i < 21; i++) {
   winArrV[i] = winningV.splice(0, 4)
 }
 
@@ -146,7 +142,7 @@ for (let k = 0; k < 4; k++) {
 
 const winArrH = []
 
-for (i = 0; i < 24; i++) {
+for (let i = 0; i < 24; i++) {
   winArrH[i] = winningH.splice(0, 4)
 }
 
@@ -160,3 +156,48 @@ function checkDraw() {
   }
 }
 
+// PARAMETERS DIAGONAL L to R
+
+const winDiagonal1 = [3, 10, 17, 24]
+const winningD1 = []
+
+for (let k = 0; k < 3; k++) {
+  for (let i = 0; i < 4; i++) {
+    winDiagonal1.forEach(function (valor) {
+      winningD1.push(valor + 6 * i)
+    })
+  }
+
+  for (let i = 0; i < 4; i++) {
+    winDiagonal1[i] -= 1
+  }
+}
+
+const winArrD1 = []
+
+for (let i = 0; i < 12; i++) {
+  winArrD1[i] = winningD1.splice(0, 4)
+}
+
+//PARAMETERS DIAGONAL R TO L
+
+const winDiagonal2 = [4, 9, 14, 19]
+const winningD2 = []
+
+for (let k = 0; k < 3; k++) {
+  for (let i = 0; i < 4; i++) {
+    winDiagonal2.forEach(function (valor) {
+      winningD2.push(valor + 6 * i)
+    })
+  }
+
+  for (let i = 0; i < 4; i++) {
+    winDiagonal2[i] += 1
+  }
+}
+
+const winArrD2 = []
+
+for (let i = 0; i < 12; i++) {
+  winArrD2[i] = winningD2.splice(0, 4)
+}
