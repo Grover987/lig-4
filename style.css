@@ -8,28 +8,35 @@ h1{
 	padding:30px;
 }
 #gameBox{
-	
-	margin: 0 auto;
+	justify-content: center;
+	width:100%;
+	height: 100%;
     align-items: center;
     display: flex;
     flex-direction: row;
     border: none;
+	margin: 0 auto;
 }
 
 section{
-  
     background-color: aqua;
-    height: 60%;
-    width: auto;
+    height: 100%;
+	width: calc(100%/7);
  	display: flex;
     flex-direction: column-reverse;
+	align-items: center;
+	justify-content: center;
 }
-
-div{
-    border: solid rebeccapurple 1px;
-    height: 100%;
-    width: 100px;
+.divCell{
+	border: 2px solid blue;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	width:100%;
+	height: 50%;
 }
+/* 
 .playerOne{
   width: 98px;
   height: 98px;
@@ -43,7 +50,7 @@ div{
   height: 98px;
   border-radius: 100%;
   background-color: black;
-}
+} */
 .menu{
 	display: flex;
 	flex-direction: row;
@@ -56,37 +63,72 @@ div{
 	align-items: center;
 }
 figure{
-	
+	justify-content: center;
 	font-weight: 500;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	width: 100%;
+	height: 100%;
 }
 figcaption{
 	margin-top: 10px;
+
 }
 #imgCat{
-	width: 110px;
-	height: 110px;
+	
+	width: 70%;
+	height: 50%;
 	border-radius: 100%;
 }
-#imgCat:hover{
-	transition-property: transform;
-	transition-duration: 1.2s;
-	transform: scale(1.5) translateY(-20px);
-	cursor: pointer;
-	box-shadow: 3px 3px 7px rgb(0 0 0), -2px -2px 7px rgb(32 49 231);
-}	
 #imgDog{
 	border-radius: 100%;
-	width: 110px;
-	width: 110px;
+	width:70%;
+	width: 68%;
 }
-#imgDog:hover{
+.imgCat--efect:hover{
 	transition-property: transform;
 	transition-duration: 1.2s;
-	transform: scale(1.5) translateY(-20px);
+	transform: scale(1.3) translateY(-10px);
+	cursor: pointer;
+	box-shadow: 3px 3px 7px rgb(0 0 0), -2px -2px 7px rgb(32 49 231);
+}
+.catCells{
+	width: 100%;
+	height: 12vw;
+	border-radius: 100%;
+}
+.dogCells{
+	width: 100%;
+	height: 12vw;
+	border-radius: 100%;
+}
+
+.imgDog--efect:hover{
+	transition-property: transform;
+	transition-duration: 1.2s;
+	transform: scale(1.3) translateY(-10px);
 	cursor: pointer;
 	box-shadow: 3px 3px 7px rgb(19, 11, 11),
 				-2px -2px 7px rgb(208, 46, 67);
+}
+@media screen and (min-width:710px){
+	.catCells{
+		width: 99%;
+		height: 99%;
+	}
+	.dogCells{
+		width: 99%;
+		height: 99%;
+	}
+	.divCell{
+		width: 100%;
+		height: 100%;
+		
+	}
+	#gameBox{
+		width: 600px;
+		margin: 0 auto;
+		height: 510px;
+	}
 }
