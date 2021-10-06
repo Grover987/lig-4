@@ -149,3 +149,13 @@ const winArrH = []
 for (i = 0; i < 24; i++) {
   winArrH[i] = winningH.splice(0, 4)
 }
+
+//DRAW CONDITION
+
+function checkDraw() {
+  if (playerOneArr.length === 21 && playerTwoArr.length === 21) {
+    console.log('deu empate')
+    //substituir o console pela função que mostra a tela
+    //Chamar a função ao final de cada jogada
+  }
+}
