@@ -105,25 +105,21 @@ function addDiscs(columns, actualPlayer) {
 const winVert = [1, 2, 3, 4]
 const winningV = []
 
-function winConVertical(valor) {
-  for (i = 0; i <= 3; i++) {
-    winningV.push(valor + i)
+for (let k = 0; k < 7; k++) {
+  for (let i = 0; i < 3; i++) {
+    winVert.forEach(function (value) {
+      winningV.push(value + i)
+    })
   }
-}
 
-function createParameters() {
-  for (let i = 0; i < 6; i++) {
-    winVert.forEach(winConVertical)
-    for (let j = 0; j < winVert.length; j++) {
-      winVert[j] += 7
-    }
+  for (let i = 0; i < winVert.length; i++) {
+    winVert[i] += 6
   }
 }
-createParameters()
 
 const winArrV = []
 
-for (i = 0; i < 24; i++) {
+for (let i = 0; i < 22; i++) {
   winArrV[i] = winningV.splice(0, 4)
 }
 
@@ -146,7 +142,7 @@ for (let k = 0; k < 4; k++) {
 
 const winArrH = []
 
-for (i = 0; i < 24; i++) {
+for (let i = 0; i < 24; i++) {
   winArrH[i] = winningH.splice(0, 4)
 }
 
