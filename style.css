@@ -1,40 +1,42 @@
-body{
-	font-family: 'Fira Code';
+body {
+  font-family: 'Fira Code';
 }
 
-h1{
-	text-align: center;
-	font-size: 60px;
-	padding:30px;
+h1 {
+  text-align: center;
+  font-size: 60px;
+  padding: 30px;
 }
-#gameBox{
-	justify-content: center;
-	width:100%;
-	height: 100%;
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    border: none;
-	margin: 0 auto;
+#gameBox {
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  border: none;
+  margin: 0 auto;
+  margin-top: 60px;
 }
 
-section{
-    background-color: aqua;
-    height: 100%;
-	width: calc(100%/7);
- 	display: flex;
-    flex-direction: column-reverse;
-	align-items: center;
-	justify-content: center;
+section {
+  position: relative;
+  background-color: aqua;
+  height: 100%;
+  width: calc(100% / 7);
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
 }
-.divCell{
-	border: 2px solid blue;
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-	width:100%;
-	height: 50%;
+.divCell {
+  border: 2px solid blue;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50%;
 }
 /* 
 .playerOne{
@@ -51,84 +53,100 @@ section{
   border-radius: 100%;
   background-color: black;
 } */
-.menu{
-	display: flex;
-	flex-direction: row;
-	width: 300px;
-	height: 200px;
-	margin: 40px auto 0 auto;
-	border: none;
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
+.menu {
+  display: flex;
+  flex-direction: row;
+  width: 300px;
+  height: 200px;
+  margin: 40px auto 0 auto;
+  border: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
-figure{
-	justify-content: center;
-	font-weight: 500;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	width: 100%;
-	height: 100%;
+div {
+  position: relative;
 }
-figcaption{
-	margin-top: 10px;
+figure {
+  justify-content: center;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+figcaption {
+  margin-top: 10px;
+}
+#imgCat {
+  width: 70%;
+  height: 50%;
+  border-radius: 100%;
+}
+#imgDog {
+  border-radius: 100%;
+  width: 70%;
+  width: 68%;
+}
+.imgCat--efect:hover {
+  transition-property: transform;
+  transition-duration: 1.2s;
+  transform: scale(1.3) translateY(-10px);
+  cursor: pointer;
+  box-shadow: 3px 3px 7px rgb(0 0 0), -2px -2px 7px rgb(32 49 231);
+}
+.catCells {
+  width: 100%;
+  height: 12vw;
+  border-radius: 100%;
+  animation: move 0.8s ease-in 1;
+  z-index: 1;
+}
+.dogCells {
+  z-index: 1;
+  width: 100%;
+  height: 12vw;
+  border-radius: 100%;
+  animation: move 0.8s ease-in 1;
+}
 
+.imgDog--efect:hover {
+  transition-property: transform;
+  transition-duration: 1.2s;
+  transform: scale(1.3) translateY(-10px);
+  cursor: pointer;
+  box-shadow: 3px 3px 7px rgb(19, 11, 11), -2px -2px 7px rgb(208, 46, 67);
 }
-#imgCat{
-	
-	width: 70%;
-	height: 50%;
-	border-radius: 100%;
+@media screen and (min-width: 710px) {
+  .catCells {
+    width: 99%;
+    height: 99%;
+  }
+  .dogCells {
+    width: 99%;
+    height: 99%;
+  }
+  .divCell {
+    width: 100%;
+    height: 100%;
+  }
+  #gameBox {
+    width: 600px;
+    margin: 0 auto;
+    height: 510px;
+  }
 }
-#imgDog{
-	border-radius: 100%;
-	width:70%;
-	width: 68%;
-}
-.imgCat--efect:hover{
-	transition-property: transform;
-	transition-duration: 1.2s;
-	transform: scale(1.3) translateY(-10px);
-	cursor: pointer;
-	box-shadow: 3px 3px 7px rgb(0 0 0), -2px -2px 7px rgb(32 49 231);
-}
-.catCells{
-	width: 100%;
-	height: 12vw;
-	border-radius: 100%;
-}
-.dogCells{
-	width: 100%;
-	height: 12vw;
-	border-radius: 100%;
-}
+@keyframes move {
+  from {
+    position: absolute;
 
-.imgDog--efect:hover{
-	transition-property: transform;
-	transition-duration: 1.2s;
-	transform: scale(1.3) translateY(-10px);
-	cursor: pointer;
-	box-shadow: 3px 3px 7px rgb(19, 11, 11),
-				-2px -2px 7px rgb(208, 46, 67);
-}
-@media screen and (min-width:710px){
-	.catCells{
-		width: 99%;
-		height: 99%;
-	}
-	.dogCells{
-		width: 99%;
-		height: 99%;
-	}
-	.divCell{
-		width: 100%;
-		height: 100%;
-		
-	}
-	#gameBox{
-		width: 600px;
-		margin: 0 auto;
-		height: 510px;
-	}
+    top: -400px;
+  }
+
+  to {
+    position: absolute;
+
+    top: 0;
+  }
 }
