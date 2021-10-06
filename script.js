@@ -119,7 +119,7 @@ for (let k = 0; k < 7; k++) {
 
 const winArrV = []
 
-for (let i = 0; i < 22; i++) {
+for (let i = 0; i < 21; i++) {
   winArrV[i] = winningV.splice(0, 4)
 }
 
@@ -154,4 +154,50 @@ function checkDraw() {
     //substituir o console pela função que mostra a tela
     //Chamar a função ao final de cada jogada
   }
+}
+
+// PARAMETERS DIAGONAL L to R
+
+const winDiagonal1 = [3, 10, 17, 24]
+const winningD1 = []
+
+for (let k = 0; k < 3; k++) {
+  for (let i = 0; i < 4; i++) {
+    winDiagonal1.forEach(function (valor) {
+      winningD1.push(valor + 6 * i)
+    })
+  }
+
+  for (let i = 0; i < 4; i++) {
+    winDiagonal1[i] -= 1
+  }
+}
+
+const winArrD1 = []
+
+for (let i = 0; i < 12; i++) {
+  winArrD1[i] = winningD1.splice(0, 4)
+}
+
+//PARAMETERS DIAGONAL R TO L
+
+const winDiagonal2 = [4, 9, 14, 19]
+const winningD2 = []
+
+for (let k = 0; k < 3; k++) {
+  for (let i = 0; i < 4; i++) {
+    winDiagonal2.forEach(function (valor) {
+      winningD2.push(valor + 6 * i)
+    })
+  }
+
+  for (let i = 0; i < 4; i++) {
+    winDiagonal2[i] += 1
+  }
+}
+
+const winArrD2 = []
+
+for (let i = 0; i < 12; i++) {
+  winArrD2[i] = winningD2.splice(0, 4)
 }
