@@ -49,13 +49,9 @@ dog.addEventListener('click', function (evt) {
   createTable(evt.target)
 })
 
-
-
-
 function addDiscs(columns, actualPlayer) {
-  
   columns.forEach(section =>
-    section.addEventListener('click', function cell (evt) {
+    section.addEventListener('click', function cell(evt) {
       let columnChild = evt.currentTarget.childNodes
       for (let i = 0; i < 6; i++) {
         if (columnChild[i].childElementCount < 1) {
@@ -78,7 +74,7 @@ function addDiscs(columns, actualPlayer) {
             count = 1
 
             columnChild[i].appendChild(players[0])
-          
+
             let playerOnePlay = players[0].parentElement.dataset
             for (let value in playerOnePlay) {
               let arrValue = playerOnePlay[value]
@@ -86,13 +82,13 @@ function addDiscs(columns, actualPlayer) {
               console.log(playerOneArr)
             }
             verifyWinner(players[0])
-            checkDraw();
+            checkDraw()
             return
           } else {
             count = 0
 
             columnChild[i].appendChild(players[1])
-           
+
             let playerTwoPlay = players[1].parentElement.dataset
             for (let value in playerTwoPlay) {
               let arrValue = playerTwoPlay[value]
@@ -100,7 +96,7 @@ function addDiscs(columns, actualPlayer) {
               console.log(playerTwoArr)
             }
             verifyWinner(players[1])
-            checkDraw();
+            checkDraw()
             return
           }
         }
@@ -210,30 +206,30 @@ for (let i = 0; i < 12; i++) {
   winArrD2[i] = winningD2.splice(0, 4)
 }
 
-let dogPopUp = document.createElement('div');
-let img = document.createElement('img');
-function dogV () {
+let dogPopUp = document.createElement('div')
+let img = document.createElement('img')
+function dogV() {
+  dogPopUp.id = 'dogDiv'
+  let node = document.createTextNode('Congratulation!! Team Doggo won!')
+  img.src = '/img/vic.jpg'
+  dogPopUp.appendChild(node)
+  setTimeout(function () {
+    body.appendChild(img), body.appendChild(dogPopUp)
+  }, 1000)
 
-
- dogPopUp.id = 'dogDiv'
- let node = document.createTextNode('Congratulation!! Team Doggo won!');
- img.src = '/img/vic.jpg';
- dogPopUp.appendChild(node);
- setTimeout(function(){body.appendChild(img), body.appendChild(dogPopUp)}, 1000)
-
- reset();
-
+  reset()
 }
 
-let catPopUp = document.createElement('div');
-let imge = document.createElement('img');
-function catV () {
- catPopUp.id = 'catDiv'
-let node = document.createTextNode('Congratulation!! Team Cat won!');
- imge.src = '/img/vi2.jpeg';
- catPopUp.appendChild(node);
- setTimeout(function() { body.appendChild(imge) ,body.appendChild(catPopUp)}, 1000)
+let catPopUp = document.createElement('div')
+let imge = document.createElement('img')
+function catV() {
+  catPopUp.id = 'catDiv'
+  let node = document.createTextNode('Congratulation!! Team Cat won!')
+  imge.src = '/img/vi2.jpeg'
+  catPopUp.appendChild(node)
+  setTimeout(function () {
+    body.appendChild(imge), body.appendChild(catPopUp)
+  }, 1000)
 
- reset();
-
+  reset()
 }
