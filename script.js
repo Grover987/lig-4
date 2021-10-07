@@ -16,7 +16,7 @@ let playerTwoArr = []
 let actualPlayer
 
 function createTable(playerTarget) {
-  menu.remove()
+  menu.style.display = 'none'
   actualPlayer = playerTarget
 
   for (let i = 1; i <= 7; i++) {
@@ -204,4 +204,32 @@ const winArrD2 = []
 
 for (let i = 0; i < 12; i++) {
   winArrD2[i] = winningD2.splice(0, 4)
+}
+
+let dogPopUp = document.createElement('div');
+let img = document.createElement('img');
+function dogV () {
+
+
+ dogPopUp.id = 'dogDiv'
+ let node = document.createTextNode('Congratulation!! Team Doggo won!');
+ img.src = '/img/vic.jpg';
+ dogPopUp.appendChild(node);
+ setTimeout(function(){body.appendChild(img), body.appendChild(dogPopUp)}, 1000)
+
+ reset();
+ return
+}
+
+let catPopUp = document.createElement('div');
+let imge = document.createElement('img');
+function catV () {
+ catPopUp.id = 'catDiv'
+let node = document.createTextNode('Congratulation!! Team Cat won!');
+ imge.src = '/img/vi2.jpeg';
+ catPopUp.appendChild(node);
+ setTimeout(function() { body.appendChild(imge) ,body.appendChild(catPopUp)}, 1000)
+
+ reset();
+ return
 }
