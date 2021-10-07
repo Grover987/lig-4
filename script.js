@@ -82,7 +82,7 @@ function addDiscs(columns, actualPlayer) {
               console.log(playerOneArr)
             }
             verifyWinner(players[0])
-            checkDraw()
+            setTimeout(function(){checkDraw()}, 1000)
             return
           } else {
             count = 0
@@ -151,12 +151,22 @@ for (let i = 0; i < 24; i++) {
 }
 
 //DRAW CONDITION
+let drawDiv = document.createElement('div')
 let imgDraw = document.createElement('img');
 function checkDraw() {
   if (playerOneArr.length === 21 && playerTwoArr.length === 21) {
+    
+    
+    playerTwoArr = [];
+    playerOneArr = [];
   
+    let node = document.createTextNode("It's a Draw!! You both played very well!!")
     imgDraw.src = './img/vic5.jpeg'
-    body.appendChild(imgDraw);
+    setTimeout(function() {    drawDiv.appendChild(node)
+      body.appendChild(imgDraw)
+      body.appendChild(drawDiv)
+      gameBox.remove()
+      gameBox.innerHTML = ''}, 1000)
     reset()
     //substituir o console pela função que mostra a tela
     //Chamar a função ao final de cada jogada
