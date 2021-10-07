@@ -8,7 +8,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-position-y: 160px;
-  background-color: black;
+  background-color: rgb(70, 172, 255);
   text-align: center;
 }
 
@@ -76,7 +76,6 @@ section {
   flex-direction: column;
   margin: 80px auto 0 auto;
   border: 3px dotted rgb(64, 223, 33);
-  flex-direction: row;
   flex-wrap: wrap;
   margin: 40px auto 0 auto;
   justify-content: space-between;
@@ -157,7 +156,42 @@ section:hover {
 .divButton {
   display: flex;
 }
+
+@keyframes move {
+  from {
+    position: absolute;
+
+    top: -400px;
+  }
+
+  to {
+    position: absolute;
+
+    top: 0;
+  }
+}
+
 @media screen and (min-width: 710px) {
+  body {
+    background-image: url(/img/catdog.jpg);
+    background-size: cover;
+  }
+  h2 {
+    font-size: 3rem;
+  }
+
+  figure {
+    flex-direction: column-reverse;
+    margin-top: 30px;
+    height: 200px;
+  }
+
+  figcaption {
+    background: rgb(70, 172, 255);
+    color: whitesmoke;
+    border: none;
+  }
+
   .catCells {
     width: 78%;
     height: 78%;
@@ -174,18 +208,27 @@ section:hover {
     width: 600px;
     margin: 0 auto;
     height: 510px;
-  }
-}
-@keyframes move {
-  from {
-    position: absolute;
-
-    top: -400px;
+    margin-top: 70px;
   }
 
-  to {
-    position: absolute;
+  #buttonReset {
+    margin-top: 30px;
+    background-color: rgb(70, 172, 255);
+  }
 
-    top: 0;
+  .menu {
+    background: none;
+    border: none;
+    flex-direction: column;
+  }
+
+  .doggo {
+    flex-direction: column;
+  }
+
+  #imgCat,
+  #imgDog {
+    height: inherit;
+    width: fit-content;
   }
 }
