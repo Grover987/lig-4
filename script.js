@@ -49,9 +49,13 @@ dog.addEventListener('click', function (evt) {
   createTable(evt.target)
 })
 
+
+
+
 function addDiscs(columns, actualPlayer) {
+  
   columns.forEach(section =>
-    section.addEventListener('click', function (evt) {
+    section.addEventListener('click', function cell (evt) {
       let columnChild = evt.currentTarget.childNodes
       for (let i = 0; i < 6; i++) {
         if (columnChild[i].childElementCount < 1) {
@@ -218,7 +222,7 @@ function dogV () {
  setTimeout(function(){body.appendChild(img), body.appendChild(dogPopUp)}, 1000)
 
  reset();
- return
+
 }
 
 let catPopUp = document.createElement('div');
@@ -228,8 +232,9 @@ function catV () {
 let node = document.createTextNode('Congratulation!! Team Cat won!');
  imge.src = '/img/vi2.jpeg';
  catPopUp.appendChild(node);
- setTimeout(function() { body.appendChild(imge) ,body.appendChild(catPopUp)}, 1000)
+ setTimeout(function() { body.appendChild(imge) 
+  body.appendChild(catPopUp)}, 1000)
 
  reset();
- return
+
 }

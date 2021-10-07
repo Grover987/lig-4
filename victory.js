@@ -26,16 +26,19 @@ function win(arrPossibility,arrPlayer,playercell){
 			if(arrPlayer.includes(arrPossibility[i][c])){
 				countToWin++;	
 			}		
+			
 		}
 		if(countToWin===4){
-			playercell = (playercell.classList.value === 'catCells') ?  catV() : dogV();
 			
-          
+			gameBox.style.pointerEvents = 'none'
+			playercell = (playercell.classList.value === 'catCells') ?   catV() : dogV();
+			playerOneArr = [];
+			playerTwoArr = [];
 			countToWin = 0
 			//colocar função que mostrara a tela de vitoria
-			setTimeout(function(){gameBox.remove()}, 2000)
-			let section = document.querySelectorAll('section');
-			section.forEach(function(element){element.removeEventListener('click', cell)})
+			setTimeout(function(){gameBox.remove()}, 1000)
+			
+	
 			return 
 		}
 		
@@ -48,20 +51,20 @@ let button = document.createElement('button');
 let node = document.createTextNode('Reset');
 function reset() {
 	
-   setTimeout(function() {button.appendChild(node), body.appendChild(button)}, 2000);
-   
+   setTimeout(function() {button.appendChild(node), body.appendChild(button)}, 1000);
+   count = 0;
    button.addEventListener('click', function() {
 	console.log(gameBox.childNodes)
 	gameBox.innerHTML= '';
 	num = 1;
-	playerOneArr = [];
-	playerTwoArr = [];
+	gameBox.style.pointerEvents = 'initial'
+	catPopUp.innerText = ''
+	dogPopUp.innerText = ''
+	catPopUp.remove()
 	dogPopUp.remove()
 	img.remove()
-	catPopUp.remove()
 	imge.remove()
 	button.remove()
-
 	
 	menu.style.display = 'flex'
 	 
