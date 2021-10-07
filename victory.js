@@ -22,14 +22,15 @@ function win(arrPossibility, arrPlayer, playercell) {
       }
     }
     if (countToWin === 4) {
+      gameBox.style.pointerEvents = 'none'
       playercell = playercell.classList.value === 'catCells' ? catV() : dogV()
       playerOneArr = []
       playerTwoArr = []
       countToWin = 0
-
+      //colocar função que mostrara a tela de vitoria
       setTimeout(function () {
         gameBox.remove()
-      }, 2000)
+      }, 1000)
 
       return
     }
@@ -41,16 +42,18 @@ let node = document.createTextNode('Reset')
 function reset() {
   setTimeout(function () {
     button.appendChild(node), body.appendChild(button)
-  }, 2000)
-
+  }, 1000)
+  count = 0
   button.addEventListener('click', function () {
     console.log(gameBox.childNodes)
     gameBox.innerHTML = ''
     num = 1
-
+    gameBox.style.pointerEvents = 'initial'
+    catPopUp.innerText = ''
+    dogPopUp.innerText = ''
+    catPopUp.remove()
     dogPopUp.remove()
     img.remove()
-    catPopUp.remove()
     imge.remove()
     button.remove()
 
