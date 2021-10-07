@@ -10,10 +10,14 @@ const dog = document.getElementById('imgDog')
 
 let num = 1
 let players = []
+let audios = []
 let count = 0
 let playerOneArr = []
 let playerTwoArr = []
 let actualPlayer
+
+const backgroundAudio = document.getElementById('backgroundAudio')
+backgroundAudio.volume = 0.3;
 
 function createTable(playerTarget) {
   menu.style.display = 'none'
@@ -42,21 +46,35 @@ playerOne.setAttribute('id', 'imgCat')
 let playerTwo = document.createElement('img')
 playerTwo.setAttribute('id', 'imgCat')
 
+
 cat.addEventListener('click', function (evt) {
   createTable(evt.target)
   createButton()
+  backgroundAudio.play()
 })
 dog.addEventListener('click', function (evt) {
   createTable(evt.target)
   createButton()
+  backgroundAudio.play()
 })
-
+const audioCat = document.getElementById('audioCat');
+audioCat.setAttribute('src','audio/cat.wav');
+audioCat.volume = 0.2;
+const audioDog = document.getElementById('audioDog');
+audioDog.volume = 0.2;
+audioDog.setAttribute('src','audio/bark.mp3')
 
 function createButton(){
   const button = document.createElement('button');
   button.setAttribute('id','buttonReset')
   button.innerText = 'Restart'
   button.addEventListener('click',function(){
+   if(backgroundAudio.paused){
+     backgroundAudio.play();
+   }else{
+    
+     backgroundAudio.currentTime = 0;
+   }
     playerTwoArr = []
     playerOneArr = []
     count = 0;
@@ -70,7 +88,8 @@ function createButton(){
   })
   body.appendChild(button)
 }
-const audio = document.getElementById('effects')
+
+
 function addDiscs(columns, actualPlayer) {
   columns.forEach(section =>
     section.addEventListener('click', function cell(evt) {
@@ -87,16 +106,20 @@ function addDiscs(columns, actualPlayer) {
           if (actualPlayer.getAttribute('id') === 'imgCat') {
             players[0] = playerOne
             players[1] = playerTwo
+            audios[0] = audioCat
+            audios[1] = audioDog
           } else {
             players[0] = playerTwo
             players[1] = playerOne
+            audios[0] = audioDog
+            audios[1] = audioCat
           }
 
           if (count === 0) {
             count = 1
 
             columnChild[i].appendChild(players[0])
-
+            audios[0].play()
             let playerOnePlay = players[0].parentElement.dataset
             for (let value in playerOnePlay) {
               let arrValue = playerOnePlay[value]
@@ -110,7 +133,7 @@ function addDiscs(columns, actualPlayer) {
             count = 0
 
             columnChild[i].appendChild(players[1])
-
+            audios[1].play()
             let playerTwoPlay = players[1].parentElement.dataset
             for (let value in playerTwoPlay) {
               let arrValue = playerTwoPlay[value]
