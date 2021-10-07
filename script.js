@@ -4,7 +4,7 @@ gameBox.setAttribute('id', 'gameBox')
 
 const menu = document.querySelector('.menu')
 let menuTrack = menu
-
+let menuSave = [menu]
 const cat = document.getElementById('imgCat')
 const dog = document.getElementById('imgDog')
 
@@ -44,13 +44,32 @@ playerTwo.setAttribute('id', 'imgCat')
 
 cat.addEventListener('click', function (evt) {
   createTable(evt.target)
+  createButton()
 })
 dog.addEventListener('click', function (evt) {
   createTable(evt.target)
+  createButton()
 })
 
 
-
+function createButton(){
+  const button = document.createElement('button');
+  button.setAttribute('id','buttonReset')
+  button.innerText = 'Restart'
+  button.addEventListener('click',function(){
+    playerTwoArr = []
+    playerOneArr = []
+    count = 0;
+    console.log(gameBox.childNodes)
+    gameBox.innerHTML= '';
+    gameBox.remove()
+    num = 1;
+    gameBox.style.pointerEvents = 'initial'
+    menu.style.display = 'flex'
+    button.remove()
+  })
+  body.appendChild(button)
+}
 
 function addDiscs(columns, actualPlayer) {
   
@@ -220,7 +239,8 @@ function dogV () {
  img.src = '/img/vic.jpg';
  dogPopUp.appendChild(node);
  setTimeout(function(){body.appendChild(img), body.appendChild(dogPopUp)}, 1000)
-
+ const button = document.getElementById('buttonReset')
+ button.remove()
  reset();
 
 }
@@ -233,8 +253,9 @@ let node = document.createTextNode('Congratulation!! Team Cat won!');
  imge.src = '/img/vi2.jpeg';
  catPopUp.appendChild(node);
  setTimeout(function() { body.appendChild(imge) 
-  body.appendChild(catPopUp)}, 1000)
-
+ body.appendChild(catPopUp)}, 1000)
+ const button = document.getElementById('buttonReset')
+ button.remove()
  reset();
 
 }
