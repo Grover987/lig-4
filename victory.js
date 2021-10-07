@@ -32,8 +32,10 @@ function win(arrPossibility,arrPlayer,playercell){
 			countToWin = 0
 			//colocar função que mostrara a tela de vitoria
 			setTimeout(function(){gameBox.remove()}, 1000)
-			
-
+			const audioWin = document.createElement('audio')
+			audioWin.setAttribute('src','audio/horse.wav')
+			audioWin.volume == 0.4;
+			audioWin.play();
 			return 
 		}
 		

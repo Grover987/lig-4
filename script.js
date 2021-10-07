@@ -58,11 +58,10 @@ dog.addEventListener('click', function (evt) {
   backgroundAudio.play()
 })
 const audioCat = document.getElementById('audioCat');
-audioCat.setAttribute('src','audio/cat.wav');
 audioCat.volume = 0.2;
 const audioDog = document.getElementById('audioDog');
 audioDog.volume = 0.2;
-audioDog.setAttribute('src','audio/bark.mp3')
+
 
 function createButton(){
   const button = document.createElement('button');
