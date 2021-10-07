@@ -220,7 +220,6 @@ function dogV() {
   reset()
 }
 
-<<<<<<< HEAD
 let catPopUp = document.createElement('div')
 let imge = document.createElement('img')
 function catV() {
@@ -229,22 +228,9 @@ function catV() {
   imge.src = '/img/vi2.jpeg'
   catPopUp.appendChild(node)
   setTimeout(function () {
-    body.appendChild(imge), body.appendChild(catPopUp)
+    body.appendChild(imge)
+    body.appendChild(catPopUp)
   }, 1000)
 
   reset()
-=======
-let catPopUp = document.createElement('div');
-let imge = document.createElement('img');
-function catV () {
- catPopUp.id = 'catDiv'
-let node = document.createTextNode('Congratulation!! Team Cat won!');
- imge.src = '/img/vi2.jpeg';
- catPopUp.appendChild(node);
- setTimeout(function() { body.appendChild(imge) 
-  body.appendChild(catPopUp)}, 1000)
-
- reset();
-
->>>>>>> fe8968221b1dbcfefbf9936b7c253a31c5f1cd62
 }
