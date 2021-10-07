@@ -4,16 +4,20 @@ gameBox.setAttribute('id', 'gameBox')
 
 const menu = document.querySelector('.menu')
 let menuTrack = menu
-
+let menuSave = [menu]
 const cat = document.getElementById('imgCat')
 const dog = document.getElementById('imgDog')
 
 let num = 1
 let players = []
+let audios = []
 let count = 0
 let playerOneArr = []
 let playerTwoArr = []
 let actualPlayer
+
+const backgroundAudio = document.getElementById('backgroundAudio')
+backgroundAudio.volume = 0.3;
 
 function createTable(playerTarget) {
   menu.style.display = 'none'
@@ -42,20 +46,52 @@ playerOne.setAttribute('id', 'imgCat')
 let playerTwo = document.createElement('img')
 playerTwo.setAttribute('id', 'imgCat')
 
+
 cat.addEventListener('click', function (evt) {
   createTable(evt.target)
+  createButton()
+  backgroundAudio.play()
 })
 dog.addEventListener('click', function (evt) {
   createTable(evt.target)
+  createButton()
+  backgroundAudio.play()
 })
+const audioCat = document.getElementById('audioCat');
+audioCat.volume = 0.2;
+const audioDog = document.getElementById('audioDog');
+audioDog.volume = 0.2;
 
 
+function createButton(){
+  const button = document.createElement('button');
+  button.setAttribute('id','buttonReset')
+  button.innerText = 'Restart'
+  button.addEventListener('click',function(){
+   if(backgroundAudio.paused){
+     backgroundAudio.play();
+   }else{
+    
+     backgroundAudio.currentTime = 0;
+   }
+    playerTwoArr = []
+    playerOneArr = []
+    count = 0;
+    console.log(gameBox.childNodes)
+    gameBox.innerHTML= '';
+    gameBox.remove()
+    num = 1;
+    gameBox.style.pointerEvents = 'initial'
+    menu.style.display = 'flex'
+    button.remove()
+  })
+  body.appendChild(button)
+}
 
 
 function addDiscs(columns, actualPlayer) {
-  
   columns.forEach(section =>
-    section.addEventListener('click', function cell (evt) {
+    section.addEventListener('click', function cell(evt) {
       let columnChild = evt.currentTarget.childNodes
       for (let i = 0; i < 6; i++) {
         if (columnChild[i].childElementCount < 1) {
@@ -69,16 +105,20 @@ function addDiscs(columns, actualPlayer) {
           if (actualPlayer.getAttribute('id') === 'imgCat') {
             players[0] = playerOne
             players[1] = playerTwo
+            audios[0] = audioCat
+            audios[1] = audioDog
           } else {
             players[0] = playerTwo
             players[1] = playerOne
+            audios[0] = audioDog
+            audios[1] = audioCat
           }
 
           if (count === 0) {
             count = 1
 
             columnChild[i].appendChild(players[0])
-          
+            audios[0].play()
             let playerOnePlay = players[0].parentElement.dataset
             for (let value in playerOnePlay) {
               let arrValue = playerOnePlay[value]
@@ -86,13 +126,13 @@ function addDiscs(columns, actualPlayer) {
               console.log(playerOneArr)
             }
             verifyWinner(players[0])
-            checkDraw();
+            setTimeout(function(){checkDraw()}, 1000)
             return
           } else {
             count = 0
 
             columnChild[i].appendChild(players[1])
-           
+            audios[1].play()
             let playerTwoPlay = players[1].parentElement.dataset
             for (let value in playerTwoPlay) {
               let arrValue = playerTwoPlay[value]
@@ -100,7 +140,7 @@ function addDiscs(columns, actualPlayer) {
               console.log(playerTwoArr)
             }
             verifyWinner(players[1])
-            checkDraw();
+            checkDraw()
             return
           }
         }
@@ -155,14 +195,30 @@ for (let i = 0; i < 24; i++) {
 }
 
 //DRAW CONDITION
-
+let drawDiv = document.createElement('div')
+let imgDraw = document.createElement('img');
 function checkDraw() {
   if (playerOneArr.length === 21 && playerTwoArr.length === 21) {
-    console.log('deu empate')
+    
+    
+    playerTwoArr = [];
+    playerOneArr = [];
+  
+    let node = document.createTextNode("It's a Draw!! You both played very well!!")
+    imgDraw.src = './img/vic5.jpeg'
+    setTimeout(function() {    drawDiv.appendChild(node)
+      body.appendChild(imgDraw)
+      body.appendChild(drawDiv)
+      gameBox.remove()
+      const button = document.getElementById('buttonReset')
+      button.remove()
+      gameBox.innerHTML = ''}, 1000)
+    reset()
     //substituir o console pela função que mostra a tela
     //Chamar a função ao final de cada jogada
   }
 }
+
 
 // PARAMETERS DIAGONAL L to R
 
@@ -220,7 +276,8 @@ function dogV () {
  img.src = '/img/vic.jpg';
  dogPopUp.appendChild(node);
  setTimeout(function(){body.appendChild(img), body.appendChild(dogPopUp)}, 1000)
-
+ const button = document.getElementById('buttonReset')
+ button.remove()
  reset();
 
 }
@@ -233,8 +290,9 @@ let node = document.createTextNode('Congratulation!! Team Cat won!');
  imge.src = '/img/vi2.jpeg';
  catPopUp.appendChild(node);
  setTimeout(function() { body.appendChild(imge) 
-  body.appendChild(catPopUp)}, 1000)
-
+ body.appendChild(catPopUp)}, 1000)
+ const button = document.getElementById('buttonReset')
+ button.remove()
  reset();
 
 }

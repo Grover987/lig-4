@@ -1,17 +1,12 @@
 function verifyWinner(player){
 
+let arrPossibilies = [winArrH,winArrV,winArrD1,winArrD2]
 	if(player === players[0]){
-	
-		win(winArrH,playerOneArr,player);
-		win(winArrV,playerOneArr,player);
-		win(winArrD1,playerOneArr,player)
-		win(winArrD2,playerOneArr,player)
+
+		arrPossibilies.forEach(arr=>win(arr,playerOneArr,player))
 
 	}else{
-		win(winArrH,playerTwoArr,player);
-		win(winArrV,playerTwoArr,player);
-		win(winArrD1,playerTwoArr,player)
-		win(winArrD2,playerTwoArr,player)
+		arrPossibilies.forEach(arr=>win(arr,playerTwoArr,player))
 		
 	}
 
@@ -37,8 +32,10 @@ function win(arrPossibility,arrPlayer,playercell){
 			countToWin = 0
 			//colocar função que mostrara a tela de vitoria
 			setTimeout(function(){gameBox.remove()}, 1000)
-			
-	
+			const audioWin = document.createElement('audio')
+			audioWin.setAttribute('src','audio/horse.wav')
+			audioWin.volume == 0.4;
+			audioWin.play();
 			return 
 		}
 		
@@ -49,6 +46,7 @@ function win(arrPossibility,arrPlayer,playercell){
 
 let button = document.createElement('button');
 let node = document.createTextNode('Reset');
+
 function reset() {
 	
    setTimeout(function() {button.appendChild(node), body.appendChild(button)}, 1000);
@@ -60,11 +58,15 @@ function reset() {
 	gameBox.style.pointerEvents = 'initial'
 	catPopUp.innerText = ''
 	dogPopUp.innerText = ''
+	drawDiv.innerText = ''
+	drawDiv.remove()
 	catPopUp.remove()
 	dogPopUp.remove()
+	imgDraw.remove()
 	img.remove()
 	imge.remove()
 	button.remove()
+	
 	
 	menu.style.display = 'flex'
 	 
