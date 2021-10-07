@@ -155,14 +155,18 @@ for (let i = 0; i < 24; i++) {
 }
 
 //DRAW CONDITION
-
+let imgDraw = document.createElement('img');
 function checkDraw() {
   if (playerOneArr.length === 21 && playerTwoArr.length === 21) {
-    console.log('deu empate')
+  
+    imgDraw.src = './img/vic5.jpeg'
+    body.appendChild(imgDraw);
+    reset()
     //substituir o console pela função que mostra a tela
     //Chamar a função ao final de cada jogada
   }
 }
+
 
 // PARAMETERS DIAGONAL L to R
 
