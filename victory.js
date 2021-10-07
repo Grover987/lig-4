@@ -29,6 +29,7 @@ function win(arrPossibility,arrPlayer,playercell){
 			
 		}
 		if(countToWin===4){
+			
 			gameBox.style.pointerEvents = 'none'
 			playercell = (playercell.classList.value === 'catCells') ?   catV() : dogV();
 			playerOneArr = [];
@@ -36,6 +37,7 @@ function win(arrPossibility,arrPlayer,playercell){
 			countToWin = 0
 			//colocar função que mostrara a tela de vitoria
 			setTimeout(function(){gameBox.remove()}, 1000)
+			
 	
 			return 
 		}
@@ -56,10 +58,11 @@ function reset() {
 	gameBox.innerHTML= '';
 	num = 1;
 	gameBox.style.pointerEvents = 'initial'
+	catPopUp.innerText = ''
+	dogPopUp.innerText = ''
+	catPopUp.remove()
 	dogPopUp.remove()
 	img.remove()
-	catPopUp.childNodes.innerHTML = ''
-
 	imge.remove()
 	button.remove()
 	
