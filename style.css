@@ -8,7 +8,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-position-y: 160px;
-  background-color: rgb(70, 172, 255);
+  background-color: black;
   text-align: center;
 }
 
@@ -175,6 +175,7 @@ section:hover {
   body {
     background-image: url(/img/catdog.jpg);
     background-size: cover;
+    background-color: rgb(70, 172, 255);
   }
   h2 {
     font-size: 3rem;
