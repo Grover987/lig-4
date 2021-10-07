@@ -1,14 +1,19 @@
 body {
   font-family: 'Press Start 2P', cursive;
+  
 }
 
 h1 {
   width: 100%;
   text-shadow: gray;
   text-align: center;
-  font-size: 60px;
+  font-size: 55px;
   padding: 30px;
   color: whitesmoke;
+  text-align: center;
+}
+h2{
+  text-align: center;
 }
 #gameBox {
   justify-content: center;
@@ -48,8 +53,10 @@ section {
 .menu {
   display: flex;
   flex-direction: column;
-  width: 300px;
-  height: 600px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 360px;
+  height: 200px;
   margin: 40px auto 0 auto;
   border: none;
   display: flex;
@@ -111,6 +118,14 @@ figcaption {
 }
 section:hover {
   border: 2px inset #797b12;
+}
+#buttonReset{
+  width: 100px;
+  height: 30px;
+  background-color: #dedf92;
+}
+.divButton{
+  display: flex;
 }
 @media screen and (min-width: 710px) {
   .catCells {
