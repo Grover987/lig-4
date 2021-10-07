@@ -1,28 +1,45 @@
+header {
+  background-color: black;
+}
+
 body {
   font-family: 'Press Start 2P', cursive;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position-y: 160px;
+  background-color: black;
+  text-align: center;
 }
 
 h1 {
   width: 100%;
   text-shadow: gray;
   text-align: center;
-  font-size: 60px;
-  padding: 30px;
+  font-size: 2rem;
+  padding: 1rem;
   color: whitesmoke;
 }
+
+h2 {
+  font-size: 0.8rem;
+  background-color: whitesmoke;
+  border-bottom: 2px darkred;
+  border-style: dashed;
+}
+
 #gameBox {
   justify-content: center;
-  width: 100%;
-  height: 100%;
+  width: 315px;
+  height: 355px;
   align-items: center;
   display: flex;
   flex-direction: row;
   border: none;
   margin: 0 auto;
-  margin-top: 60px;
   background-image: url(/img/paws.jpg);
   background-size: cover;
-  margin-top: 8rem;
+  margin-top: 40px;
 }
 
 section {
@@ -45,16 +62,18 @@ section {
   height: 50%;
 }
 
+.cat {
+  flex-direction: column-reverse;
+}
+
 .menu {
   display: flex;
   flex-direction: column;
-  width: 300px;
-  height: 600px;
-  margin: 40px auto 0 auto;
-  border: none;
-  display: flex;
+  margin: 80px auto 0 auto;
+  border: 3px dotted rgb(64, 223, 33);
   justify-content: space-between;
   align-items: center;
+  background-color: darkslategrey;
 }
 div {
   position: relative;
@@ -65,20 +84,26 @@ figure {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0 auto 60px auto;
 }
 figcaption {
   margin-top: 10px;
-  font-size: 3rem;
+  background: rgb(64, 223, 33);
+  padding: 5px;
+  color: black;
+  border: 4px;
+  border-style: dashed;
+  font-size: 1.5rem;
 }
 #imgCat {
-  width: 7rem;
-  height: 7rem;
+  width: 5rem;
+  height: 5rem;
   border-radius: 100%;
 }
 #imgDog {
   border-radius: 100%;
-  width: 7rem;
-  width: 7rem;
+  width: 5rem;
+  width: 5rem;
 }
 .imgCat--efect:hover {
   transition-property: transform;
@@ -143,37 +168,4 @@ section:hover {
 
     top: 0;
   }
-}
-
-body {
-  background-image: url(/img/catdog.jpg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-position-y: 160px;
-  background-color: black;
-  text-align: center;
-}
-
-header {
-  background-color: black;
-}
-
-figure {
-  margin: 0 auto;
-}
-
-figcaption {
-  background: black;
-  padding: 5px;
-  color: lightblue;
-  border: 6px;
-  border-style: dashed;
-}
-
-h2 {
-  font-size: 3rem;
-  background-color: whitesmoke;
-  border-bottom: 3px darkred;
-  border-style: dashed;
 }
