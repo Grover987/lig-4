@@ -231,7 +231,7 @@ section:hover {
 @media screen and (min-width: 710px) {
   body {
     background-image: url(/assets/img/catdog.jpg);
-    background-size: cover;
+    background-size: contain;
     background-color: rgb(70, 172, 255);
   }
   h2 {
