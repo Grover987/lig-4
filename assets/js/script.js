@@ -105,9 +105,9 @@ function addDiscs(columns, actualPlayer) {
         if (columnChild[i].childElementCount < 1) {
           playerOne = document.createElement('img')
           playerOne.setAttribute('class', 'catCells')
-          playerOne.setAttribute('src', '/assets/img/doge2.png')
+          playerOne.setAttribute('src', './assets/img/doge2.png')
           playerTwo = document.createElement('img')
-          playerTwo.setAttribute('src', '/assets/img/doge.png')
+          playerTwo.setAttribute('src', './assets/img/doge.png')
           playerTwo.setAttribute('class', 'dogCells')
 
           if (actualPlayer.getAttribute('id') === 'imgCat') {
@@ -287,7 +287,7 @@ function dogV() {
   img.classList.add('vicP')
   dogPopUp.id = 'dogDiv'
   let node = document.createTextNode('Congratulation!! Team Doggo won!')
-  img.src = '/assets/img/vic.jpg'
+  img.src = './assets/img/vic.jpg'
   dogPopUp.appendChild(node)
   setTimeout(function () {
     body.appendChild(img), body.appendChild(dogPopUp)
@@ -304,7 +304,7 @@ function catV() {
   imge.classList.add('vicP')
   catPopUp.id = 'catDiv'
   let node = document.createTextNode('Congratulation!! Team Cat won!')
-  imge.src = '/assets/img/vi2.jpeg'
+  imge.src = './assets/img/vi2.jpeg'
   catPopUp.appendChild(node)
   setTimeout(function () {
     body.appendChild(imge)
