@@ -5,24 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lig 4 - Grupo 3</title>
     <link rel="stylesheet" href="reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
+
   </head>
   <body>
-    <h1>LigFor animals</h1>
+    <h1>Lig-4 animals</h1>
 
-    <div class='menu'>
-      <figure>
-         <img id='imgCat' class="imgCat--efect" src="img/doge2.png"alt="">
-         <figcaption>Team cat</figcaption>
+  <body>
+    <div class="menu">
+      <h2>Choose your team</h2>
+      <figure class="cat">
+        <img id="imgCat" class="imgCat--efect" src="img/doge2.png" alt="" />
+        <figcaption>Team cat</figcaption>
       </figure>
-        
-      <figure>
-        <img id='imgDog' class="imgDog--efect"src="img/doge.png" alt="">
+
+      <figure class="doggo">
+        <img id="imgDog" class="imgDog--efect" src="img/doge.png" alt="" />
         <figcaption>Team Doggo</figcaption>
       </figure>
-         
+
+      <button id='btnMusic'>Music</button>
+
     </div>
-        
+
+    <audio src="audio/catMeme.mp3" id="backgroundAudio" loop></audio>
+    <audio src="audio/cat.wav" id="audioCat"></audio>
+    <audio src="audio/bark.mp3" id="audioDog" ></audio>
+
+    <script src="victory.js"></script>    
     <script src="script.js"></script>
   </body>
 </html>
