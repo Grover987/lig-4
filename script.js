@@ -3,8 +3,11 @@ const gameBox = document.createElement('div')
 gameBox.setAttribute('id', 'gameBox')
 
 const menu = document.querySelector('.menu')
+const buttonMusic = document.getElementById('btnMusic')
+
 let menuTrack = menu
 let menuSave = [menu]
+
 const cat = document.getElementById('imgCat')
 const dog = document.getElementById('imgDog')
 
@@ -16,6 +19,17 @@ let playerOneArr = []
 let playerTwoArr = []
 let actualPlayer
 
+function turnMusic(){
+	if(backgroundAudio.paused){
+		backgroundAudio.play()
+		buttonMusic.style.border = '3px outset green'
+	}else{
+		backgroundAudio.pause()
+		buttonMusic.style.border = '3px outset red'
+		backgroundAudio.currentTime = 0
+	}
+}
+buttonMusic.addEventListener('click',turnMusic)
 const backgroundAudio = document.getElementById('backgroundAudio')
 backgroundAudio.volume = 0.3;
 
@@ -51,6 +65,7 @@ cat.addEventListener('click', function (evt) {
   createTable(evt.target)
   createButton()
   backgroundAudio.play()
+  body.appendChild(buttonMusic)
 })
 dog.addEventListener('click', function (evt) {
   createTable(evt.target)
