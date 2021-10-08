@@ -20,19 +20,19 @@ let playerTwoArr = []
 let actualPlayer
 let buttonTrack = [buttonMusic]
 
-function turnMusic(){
-	if(backgroundAudio.paused){
-		backgroundAudio.play()
-		buttonMusic.style.border = '3px outset green'
-	}else{
-		backgroundAudio.pause()
-		buttonMusic.style.border = '3px outset red'
-		backgroundAudio.currentTime = 0
-	}
+function turnMusic() {
+  if (backgroundAudio.paused) {
+    backgroundAudio.play()
+    buttonMusic.style.border = '3px outset green'
+  } else {
+    backgroundAudio.pause()
+    buttonMusic.style.border = '3px outset red'
+    backgroundAudio.currentTime = 0
+  }
 }
-buttonMusic.addEventListener('click',turnMusic)
+buttonMusic.addEventListener('click', turnMusic)
 const backgroundAudio = document.getElementById('backgroundAudio')
-backgroundAudio.volume = 0.3;
+backgroundAudio.volume = 0.3
 
 function createTable(playerTarget) {
   menu.style.display = 'none'
@@ -61,7 +61,6 @@ playerOne.setAttribute('id', 'imgCat')
 let playerTwo = document.createElement('img')
 playerTwo.setAttribute('id', 'imgCat')
 
-
 cat.addEventListener('click', function (evt) {
   createTable(evt.target)
   createButton()
@@ -74,32 +73,29 @@ dog.addEventListener('click', function (evt) {
   backgroundAudio.play()
   body.appendChild(buttonMusic)
 })
-const audioCat = document.getElementById('audioCat');
-audioCat.volume = 0.2;
-const audioDog = document.getElementById('audioDog');
-audioDog.volume = 0.2;
+const audioCat = document.getElementById('audioCat')
+audioCat.volume = 0.2
+const audioDog = document.getElementById('audioDog')
+audioDog.volume = 0.2
 
-
-function createButton(){
-  const button = document.createElement('button');
-  button.setAttribute('id','buttonReset')
+function createButton() {
+  const button = document.createElement('button')
+  button.setAttribute('id', 'buttonReset')
   button.innerText = 'Restart'
-  button.addEventListener('click',function(){
-   
+  button.addEventListener('click', function () {
     playerTwoArr = []
     playerOneArr = []
-    count = 0;
+    count = 0
     console.log(gameBox.childNodes)
-    gameBox.innerHTML= '';
+    gameBox.innerHTML = ''
     gameBox.remove()
-    num = 1;
+    num = 1
     gameBox.style.pointerEvents = 'initial'
     menu.style.display = 'flex'
     button.remove()
   })
   body.appendChild(button)
 }
-
 
 function addDiscs(columns, actualPlayer) {
   columns.forEach(section =>
@@ -109,9 +105,9 @@ function addDiscs(columns, actualPlayer) {
         if (columnChild[i].childElementCount < 1) {
           playerOne = document.createElement('img')
           playerOne.setAttribute('class', 'catCells')
-          playerOne.setAttribute('src', 'img/doge2.png')
+          playerOne.setAttribute('src', '/assets/img/doge2.png')
           playerTwo = document.createElement('img')
-          playerTwo.setAttribute('src', 'img/doge.png')
+          playerTwo.setAttribute('src', '/assets/img/doge.png')
           playerTwo.setAttribute('class', 'dogCells')
 
           if (actualPlayer.getAttribute('id') === 'imgCat') {
@@ -138,7 +134,9 @@ function addDiscs(columns, actualPlayer) {
               console.log(playerOneArr)
             }
             verifyWinner(players[0])
-            setTimeout(function(){checkDraw()}, 1000)
+            setTimeout(function () {
+              checkDraw()
+            }, 1000)
             return
           } else {
             count = 0
@@ -208,32 +206,33 @@ for (let i = 0; i < 24; i++) {
 
 //DRAW CONDITION
 let drawDiv = document.createElement('div')
-let imgDraw = document.createElement('img');
+let imgDraw = document.createElement('img')
 function checkDraw() {
   if (playerOneArr.length === 21 && playerTwoArr.length === 21) {
-    
-    
-    playerTwoArr = [];
-    playerOneArr = [];
-  
-    let node = document.createTextNode("It's a Draw!! You both played very well!!")
-    imgDraw.src = './img/vic5.jpeg'
+    playerTwoArr = []
+    playerOneArr = []
+
+    let node = document.createTextNode(
+      "It's a Draw!! You both played very well!!"
+    )
+    imgDraw.src = './assets/img/vic5.jpeg'
     drawDiv.classList.add('vicD')
     imgDraw.classList.add('vicP')
-    setTimeout(function() {    drawDiv.appendChild(node)
+    setTimeout(function () {
+      drawDiv.appendChild(node)
       body.appendChild(imgDraw)
       body.appendChild(drawDiv)
       body.appendChild(buttonMusic)
       gameBox.remove()
       const button = document.getElementById('buttonReset')
       button.remove()
-      gameBox.innerHTML = ''}, 1000)
+      gameBox.innerHTML = ''
+    }, 1000)
     reset()
     //substituir o console pela função que mostra a tela
     //Chamar a função ao final de cada jogada
   }
 }
-
 
 // PARAMETERS DIAGONAL L to R
 
@@ -281,37 +280,37 @@ for (let i = 0; i < 12; i++) {
   winArrD2[i] = winningD2.splice(0, 4)
 }
 
-let dogPopUp = document.createElement('div');
-let img = document.createElement('img');
-function dogV () {
-
+let dogPopUp = document.createElement('div')
+let img = document.createElement('img')
+function dogV() {
   dogPopUp.classList.add('vicD')
-img.classList.add('vicP')
- dogPopUp.id = 'dogDiv'
- let node = document.createTextNode('Congratulation!! Team Doggo won!');
- img.src = '/img/vic.jpg';
- dogPopUp.appendChild(node);
- setTimeout(function(){body.appendChild(img), body.appendChild(dogPopUp)}, 800)
- const button = document.getElementById('buttonReset')
- button.remove()
- reset();
-
+  img.classList.add('vicP')
+  dogPopUp.id = 'dogDiv'
+  let node = document.createTextNode('Congratulation!! Team Doggo won!')
+  img.src = '/assets/img/vic.jpg'
+  dogPopUp.appendChild(node)
+  setTimeout(function () {
+    body.appendChild(img), body.appendChild(dogPopUp)
+  }, 800)
+  const button = document.getElementById('buttonReset')
+  button.remove()
+  reset()
 }
 
-let catPopUp = document.createElement('div');
-let imge = document.createElement('img');
-function catV () {
-  
+let catPopUp = document.createElement('div')
+let imge = document.createElement('img')
+function catV() {
   catPopUp.classList.add('vicD')
   imge.classList.add('vicP')
- catPopUp.id = 'catDiv'
-let node = document.createTextNode('Congratulation!! Team Cat won!');
- imge.src = '/img/vi2.jpeg';
- catPopUp.appendChild(node);
- setTimeout(function() { body.appendChild(imge) 
- body.appendChild(catPopUp)}, 800)
- const button = document.getElementById('buttonReset')
- button.remove()
- reset();
-
+  catPopUp.id = 'catDiv'
+  let node = document.createTextNode('Congratulation!! Team Cat won!')
+  imge.src = '/assets/img/vi2.jpeg'
+  catPopUp.appendChild(node)
+  setTimeout(function () {
+    body.appendChild(imge)
+    body.appendChild(catPopUp)
+  }, 800)
+  const button = document.getElementById('buttonReset')
+  button.remove()
+  reset()
 }
