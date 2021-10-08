@@ -206,6 +206,8 @@ function checkDraw() {
   
     let node = document.createTextNode("It's a Draw!! You both played very well!!")
     imgDraw.src = './img/vic5.jpeg'
+    drawDiv.classList.add('vicD')
+    imgDraw.classList.add('vicP')
     setTimeout(function() {    drawDiv.appendChild(node)
       body.appendChild(imgDraw)
       body.appendChild(drawDiv)
@@ -270,7 +272,8 @@ let dogPopUp = document.createElement('div');
 let img = document.createElement('img');
 function dogV () {
 
-
+  dogPopUp.classList.add('vicD')
+img.classList.add('vicP')
  dogPopUp.id = 'dogDiv'
  let node = document.createTextNode('Congratulation!! Team Doggo won!');
  img.src = '/img/vic.jpg';
@@ -285,6 +288,9 @@ function dogV () {
 let catPopUp = document.createElement('div');
 let imge = document.createElement('img');
 function catV () {
+  
+  catPopUp.classList.add('vicD')
+  imge.classList.add('vicP')
  catPopUp.id = 'catDiv'
 let node = document.createTextNode('Congratulation!! Team Cat won!');
  imge.src = '/img/vi2.jpeg';

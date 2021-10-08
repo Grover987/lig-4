@@ -46,6 +46,7 @@ function win(arrPossibility,arrPlayer,playercell){
 
 let button = document.createElement('button');
 let node = document.createTextNode('Reset');
+button.id = 'reset'
 
 function reset() {
 	
