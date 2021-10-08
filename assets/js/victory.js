@@ -27,7 +27,7 @@ function win(arrPossibility, arrPlayer, playercell) {
         gameBox.remove()
       }, 800)
       const audioWin = document.createElement('audio')
-      audioWin.setAttribute('src', '../assets/audio/horse.wav')
+      audioWin.setAttribute('src', './assets/audio/horse.wav')
       audioWin.volume == 0.4
       audioWin.play()
       buttonMusic.remove()
