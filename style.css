@@ -156,7 +156,7 @@ figcaption {
   box-shadow: 3px 3px 7px rgb(208, 46, 67), -2px -2px 7px rgb(208, 46, 67);
 }
 section:hover {
-  border: 2px inset #797b12;
+  border: 3px solid red;
 }
 #buttonReset {
   border-radius: 8px;
@@ -179,6 +179,10 @@ section:hover {
   background-color: mediumorchid;
   color: whitesmoke;
 
+}
+#reset:hover{
+  background-color:#ce91dd ;
+  cursor: pointer;
 }
 #buttonReset:hover{
   background-color:rgb(167, 208, 242) ;
