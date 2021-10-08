@@ -43,7 +43,7 @@ h2 {
   flex-direction: row;
   border: none;
   margin: 0 auto;
-  background-image: url(./assets/img/paws.jpg);
+  background-image: url(../assets/img/paws.jpg);
   background-size: cover;
   margin-top: 40px;
 }
@@ -230,7 +230,7 @@ section:hover {
 
 @media screen and (min-width: 710px) {
   body {
-    background-image: url(./assets/img/catdog.jpg);
+    background-image: url(../assets/img/catdog.jpg);
     background-size: contain;
     background-color: rgb(70, 172, 255);
   }
