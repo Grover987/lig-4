@@ -17,11 +17,12 @@ h1 {
   text-shadow: gray;
   text-align: center;
   font-size: 2rem;
-  padding: 1rem;
+  padding: 20px;
   color: whitesmoke;
   text-align: center;
 }
 h2 {
+  padding: 10px;
   text-align: center;
   width: 100%;
 }
@@ -96,7 +97,7 @@ figure {
 figcaption {
   margin-top: 10px;
   background: rgb(64, 223, 33);
-  padding: 5px;
+  padding: 10px;
   color: black;
   border: 4px;
   border-style: dashed;
@@ -117,7 +118,7 @@ figcaption {
   transition-duration: 1.2s;
   transform: scale(1.2) translateY(-10px);
   cursor: pointer;
-  box-shadow: 3px 3px 7px rgb(0 0 0), -2px -2px 7px rgb(32 49 231);
+  box-shadow: 3px 3px 7px rgb(70, 172, 255), -2px -2px 7px rgb(70, 172, 255);
 }
 
  .vicP {
@@ -152,15 +153,15 @@ figcaption {
   transition-duration: 1.2s;
   transform: scale(1.2) translateY(-10px);
   cursor: pointer;
-  box-shadow: 3px 3px 7px rgb(19, 11, 11), -2px -2px 7px rgb(208, 46, 67);
+  box-shadow: 3px 3px 7px rgb(208, 46, 67), -2px -2px 7px rgb(208, 46, 67);
 }
 section:hover {
   border: 2px inset #797b12;
 }
 #buttonReset {
-  border-radius: 4px;
+  border-radius: 8px;
   font-family: 'Press Start 2P';
-  padding: 30p;
+  padding: 30px;
   padding: 30px;
   margin-top: 5rem;
   font-size: 20px;
@@ -170,7 +171,7 @@ section:hover {
 }
 
 #reset {
-  border-radius: 4px;
+  border-radius: 8px;
   margin: 50px 0px 0px 0px;
   padding: 25px 30px;
   font-family: 'Press Start 2P';
@@ -179,11 +180,15 @@ section:hover {
   color: whitesmoke;
 
 }
-
+#buttonReset:hover{
+  background-color:rgb(167, 208, 242) ;
+  cursor: pointer;
+}
 .divButton {
   display: flex;
 }
 #btnMusic{
+  border-radius: 10px;
   padding: 30px;
   border: 3px outset rgb(97, 91, 91);
   background-color: black;
@@ -198,10 +203,10 @@ section:hover {
 }
 .on{
   color: rgb(19, 45, 131);
-  border: 2px outset rgb(87, 230, 87);
+  border: 3px outset rgb(87, 230, 87);
 }
 .off{
-  border: 2px outset rgb(208, 43, 43);
+  border: 3px outset rgb(208, 43, 43);
   color: rgb(209, 22, 22);
 }
 @keyframes move {
@@ -230,7 +235,7 @@ section:hover {
 
   figure {
     flex-direction: column-reverse;
-    margin-top: 30px;
+    margin: 0 auto 0 auto;
     height: 200px;
   }
 
@@ -271,21 +276,22 @@ section:hover {
     width: 600px;
     margin: 0 auto;
     height: 510px;
-    margin-top: 100px;
+   
   }
 
   #buttonReset {
-    border-radius: 4px;
+    border-radius: 8px;
     margin-top: 30px;
     background-color: rgb(70, 172, 255);
   }
 
   #reset {
-  
+    padding: 30px;
     margin: 0;
   }
 
   .menu {
+    margin: 0 auto;
     background: none;
     border: none;
     flex-direction: column;
@@ -297,7 +303,7 @@ section:hover {
 
   #imgCat,
   #imgDog {
-    height: inherit;
-    width: fit-content;
+    height: 7rem;
+    width: 7rem;
   }
 }
