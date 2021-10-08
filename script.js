@@ -3,8 +3,11 @@ const gameBox = document.createElement('div')
 gameBox.setAttribute('id', 'gameBox')
 
 const menu = document.querySelector('.menu')
+const buttonMusic = document.getElementById('btnMusic')
+
 let menuTrack = menu
 let menuSave = [menu]
+
 const cat = document.getElementById('imgCat')
 const dog = document.getElementById('imgDog')
 
@@ -15,7 +18,19 @@ let count = 0
 let playerOneArr = []
 let playerTwoArr = []
 let actualPlayer
+let buttonTrack = [buttonMusic]
 
+function turnMusic(){
+	if(backgroundAudio.paused){
+		backgroundAudio.play()
+		buttonMusic.style.border = '3px outset green'
+	}else{
+		backgroundAudio.pause()
+		buttonMusic.style.border = '3px outset red'
+		backgroundAudio.currentTime = 0
+	}
+}
+buttonMusic.addEventListener('click',turnMusic)
 const backgroundAudio = document.getElementById('backgroundAudio')
 backgroundAudio.volume = 0.3;
 
@@ -51,11 +66,13 @@ cat.addEventListener('click', function (evt) {
   createTable(evt.target)
   createButton()
   backgroundAudio.play()
+  body.appendChild(buttonMusic)
 })
 dog.addEventListener('click', function (evt) {
   createTable(evt.target)
   createButton()
   backgroundAudio.play()
+  body.appendChild(buttonMusic)
 })
 const audioCat = document.getElementById('audioCat');
 audioCat.volume = 0.2;
@@ -68,12 +85,7 @@ function createButton(){
   button.setAttribute('id','buttonReset')
   button.innerText = 'Restart'
   button.addEventListener('click',function(){
-   if(backgroundAudio.paused){
-     backgroundAudio.play();
-   }else{
-    
-     backgroundAudio.currentTime = 0;
-   }
+   
     playerTwoArr = []
     playerOneArr = []
     count = 0;
@@ -211,6 +223,7 @@ function checkDraw() {
     setTimeout(function() {    drawDiv.appendChild(node)
       body.appendChild(imgDraw)
       body.appendChild(drawDiv)
+      body.appendChild(buttonMusic)
       gameBox.remove()
       const button = document.getElementById('buttonReset')
       button.remove()
@@ -278,7 +291,7 @@ img.classList.add('vicP')
  let node = document.createTextNode('Congratulation!! Team Doggo won!');
  img.src = '/img/vic.jpg';
  dogPopUp.appendChild(node);
- setTimeout(function(){body.appendChild(img), body.appendChild(dogPopUp)}, 1000)
+ setTimeout(function(){body.appendChild(img), body.appendChild(dogPopUp)}, 800)
  const button = document.getElementById('buttonReset')
  button.remove()
  reset();
@@ -296,7 +309,7 @@ let node = document.createTextNode('Congratulation!! Team Cat won!');
  imge.src = '/img/vi2.jpeg';
  catPopUp.appendChild(node);
  setTimeout(function() { body.appendChild(imge) 
- body.appendChild(catPopUp)}, 1000)
+ body.appendChild(catPopUp)}, 800)
  const button = document.getElementById('buttonReset')
  button.remove()
  reset();

@@ -31,11 +31,12 @@ function win(arrPossibility,arrPlayer,playercell){
 			playerTwoArr = [];
 			countToWin = 0
 			//colocar função que mostrara a tela de vitoria
-			setTimeout(function(){gameBox.remove()}, 1000)
+			setTimeout(function(){gameBox.remove()}, 800)
 			const audioWin = document.createElement('audio')
 			audioWin.setAttribute('src','audio/horse.wav')
 			audioWin.volume == 0.4;
 			audioWin.play();
+			buttonMusic.remove()
 			return 
 		}
 		
@@ -69,6 +70,7 @@ function reset() {
 	button.remove()
 	
 	
+	body.appendChild(buttonTrack[0])
 	menu.style.display = 'flex'
 	 
 })   
