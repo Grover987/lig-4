@@ -156,7 +156,26 @@ section:hover {
 .divButton {
   display: flex;
 }
-
+#btnMusic{
+  border: 3px outset rgb(97, 91, 91);
+  background-color: black;
+  color: white;
+  width: 120px;
+  font-family: 'Press Start 2P', cursive;
+  height: 40px;
+}
+#btnMusic:hover{
+  cursor: pointer;
+  background-color: rgb(97, 91, 91);
+}
+.on{
+  color: rgb(19, 45, 131);
+  border: 2px outset rgb(87, 230, 87);
+}
+.off{
+  border: 2px outset rgb(208, 43, 43);
+  color: rgb(209, 22, 22);
+}
 @keyframes move {
   from {
     position: absolute;
